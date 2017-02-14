@@ -286,7 +286,7 @@ long  enpower_opencl_mohammad_ioctl(struct        file *file,	      // ditto
     	if (arg_param->pointer == 1) {
     		physical_address = get_physical_address(arg_param->value, arg_param->direction);
     		if (physical_address != 0) {
-    			register_value = physical_address/arg_param->size_type;
+    			register_value = physical_address;///arg_param->size_type;
     		}
     		else
     			printk(KERN_ERR "error FPGACL_DEVICE_IOWRITE for address vm_start 0x%x direction = 0x%x\n", arg_param->value, arg_param->direction);
